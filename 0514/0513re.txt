@@ -1,0 +1,12 @@
+review list
+
+0. 패키지 다시보기
+1. all
+2. any
+3. dir
+4. divmod
+5. eval
+6. datetime, calendar
+7. shutil
+8. glob
+9. os

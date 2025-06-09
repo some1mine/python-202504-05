@@ -1,0 +1,9 @@
+2025-04-23 한 것
+
+1. 아나콘다 설치
+2. 주피터 노트북 설치 -> 간단한 실행(아나콘다 로그인 및 경로[C:\Users\user\AppData\Roaming\jupyter\runtime]로 직접 들어가 권한 획득 필요)
+3. vscode 설치 및 python 연결
+4. 아나콘다 환경변수 설정[C:\ProgramData\anaconda3, C:\ProgramData\anaconda3\Library, C:\ProgramData\anaconda3\Scripts]
+5. ppt 및 기록
+
+수업 자료 복기 필요
