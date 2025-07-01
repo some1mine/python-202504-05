@@ -1,5 +1,4 @@
-function play(param0) {
-    let arr  = [[10], [30], [50], [80]];
+function play(arr, param0) {
     function findOrd(num) {
         let diff = 99999; let idx = -1;
         for(let i = 0 ; i < 4 ; i++) {
@@ -50,7 +49,68 @@ function play(param0) {
     return new Map([['A', results[0]], ['B', results[1]], ['C', results[2]]]);
 }
 
-console.log(play([1,2,3]));
-console.log(play([51,12,11,15,9,61]));
-console.log(play([21,9,4]));
-console.log(play([55,8,29,13,7,61]));
+let arr  = [[10], [30], [50], [80]];
+if(arr[0].length == 0 && arr[1].length == 0 && arr[2].length == 0 && arr[3].length == 0) {
+    rl.close();
+    return;
+}
+console.log(play(arr, [1,2,3]));
+arr  = [[10], [30], [50], [80]];
+if(arr[0].length == 0 && arr[1].length == 0 && arr[2].length == 0 && arr[3].length == 0) {
+    rl.close();
+    return;
+}
+console.log(play(arr, [51,12,11,15,9,61]));
+arr  = [[10], [30], [50], [80]];
+if(arr[0].length == 0 && arr[1].length == 0 && arr[2].length == 0 && arr[3].length == 0) {
+    rl.close();
+    return;
+}
+console.log(play(arr, [21,9,4]));
+arr  = [[10], [30], [50], [80]];
+if(arr[0].length == 0 && arr[1].length == 0 && arr[2].length == 0 && arr[3].length == 0) {
+    rl.close();
+    return;
+}
+console.log(play(arr, [55,8,29,13,7,61]));
+
+
+
+// 데이터 입력/출력 부분
+const readline = require('readline');
+const rl = readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+});
+
+let cards = []; let A = []; let B = []; let C = [];
+for(let i = 1 ; i <= 100 ; i++) {
+    if(i === 10 || i === 30 || i === 50 || i === 80) continue;
+    cards.push(i);
+}
+for(let i = 0 ; i < 10 ; i++) {
+    A.push(cards[i]); B.push(cards[i * 3]); C.push(cards[i * 6]);
+}
+
+function playTurn() {
+    let arr  = [[10], [30], [50], [80]];
+    if(arr[0].length == 0 && arr[1].length == 0 && arr[2].length == 0 && arr[3].length == 0) {
+        rl.close();
+        return;
+    }
+    rl.question(`Input choice of A, B, C (Count of numbers must be multiple of 3 and splited by comma(,)): `, (line) => {
+        let inputs = line.trim();   
+        if(inputs.length === 0) {
+            rl.close(); 
+            return;
+        }
+        const numArray = inputs.split(',').map(Number);
+        const answer = play(arr, numArray);
+        for (const [key, value] of answer){
+            console.log(key+"="+value);
+        }
+        playTurn();
+    });
+}
+
+playTurn();
